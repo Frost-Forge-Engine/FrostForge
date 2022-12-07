@@ -11,10 +11,10 @@ endif()
 include(${CPM_DOWNLOAD_LOCATION})
 
 # Add Global variables
+set(BOX2D_BUILD_TESTBED OFF)
 
 # Add CPMPackages for editor here with CPMAddPackage(NAME <PackageName> VERSION <Version> GITHUB_REPOSITORY <GitRepository> GIT_TAG <GitTag>)
 # Example: CPMAddPackage(NAME FrostForge VERSION 0.0.1 GITHUB_REPOSITORY TheLartians/FrostForge)
-#CPMAddPackage(NAME Boost VERSION 1.80.0 GITHUB_REPOSITORY boostorg/boost)
 CPMAddPackage(NAME GLFW GITHUB_REPOSITORY glfw/glfw GIT_TAG 3.3.8)
 CPMAddPackage(NAME Box2D VERSION 2.4.1 GITHUB_REPOSITORY erincatto/box2d)
 CPMAddPackage(NAME imgui VERSION 1.89.1 GITHUB_REPOSITORY ocornut/imgui)
@@ -22,6 +22,7 @@ CPMAddPackage(NAME ImGuizmo GITHUB_REPOSITORY CedricGuillemet/ImGuizmo GIT_TAG 1
 CPMAddPackage(NAME glm GITHUB_REPOSITORY g-truc/glm GIT_TAG 0.9.9.8)
 CPMAddPackage(NAME spdlog VERSION 1.11.0 GITHUB_REPOSITORY gabime/spdlog)
 CPMAddPackage(NAME yaml-cpp GITHUB_REPOSITORY jbeder/yaml-cpp GIT_TAG "yaml-cpp-0.7.0")
+CPMAddPackage(NAME Boost GITHUB_REPOSITORY boostorg/boost GIT_TAG "boost-1.80.0")
 
 # Add Sources
 file(GLOB SOURCES CONFIGURE_DEPENDS
@@ -40,7 +41,7 @@ add_library(FrostForge
 ## Link external libraries
 target_link_libraries(FrostForge
     PUBLIC
-      Asio
+      Boost
       Box2D
       GLFW
       imgui
