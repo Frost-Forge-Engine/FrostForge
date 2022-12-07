@@ -14,12 +14,11 @@ include(${CPM_DOWNLOAD_LOCATION})
 # Example: CPMAddPackage(NAME Warlock VERSION 0.0.1 GITHUB_REPOSITORY TheLartians/Warlock)
 
 # Collect all source files
-file(GLOB SOURCES CONFIGURE_DEPENDS
-    src/*.hpp
-    src/*.cpp
+set(SOURCES
+    src/EditorApp.cpp
 )
 
-add_executable(FrostForge-Editor SOURCES)
+add_executable(FrostForge-Editor src/EditorApp.cpp)
 
 # Link libraries for editor here
 target_link_libraries(FrostForge-Editor

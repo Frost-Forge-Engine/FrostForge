@@ -54,7 +54,7 @@ target_link_libraries(FrostForge
 ## Add pre-compiled headers
 target_precompile_headers(FrostForge
     PUBLIC
-        ffpch.hpp
+        src/ffpch.hpp
 )
 
 ## Add include directories
