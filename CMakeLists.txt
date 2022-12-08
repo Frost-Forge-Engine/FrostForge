@@ -12,5 +12,9 @@ set(CMAKE_CXX_EXTENSIONS OFF)
 
 #add_compile_options(-Wall -Wextra -Werror)
 
+list(APPEND CMAKE_MODULE_PATH "${CMAKE_SOURCE_DIR}/cmake")
 add_subdirectory(FrostForge)
 add_subdirectory(Editor)
+
+include(Doxygen)
+Doxygen(FrostForge/src FrostForge/docs)
