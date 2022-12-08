@@ -1,9 +1,9 @@
 cmake_minimum_required(VERSION 3.24.0)
-project(Warlock_Engine VERSION 0.0.1 LANGUAGES CXX)
+project(FrostForge-Engine VERSION 0.0.1 LANGUAGES CXX)
 
 ## 64 Bit Check
 if(NOT CMAKE_SIZEOF_VOID_P MATCHES 8)
-    message(FATAL_ERROR "Warlock Engine only supports 64-bit builds.")
+    message(FATAL_ERROR "Frost Forge Engine only supports 64-bit builds.")
 endif()
 
 set(CMAKE_CXX_STANDARD 20)
