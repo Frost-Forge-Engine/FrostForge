@@ -13,12 +13,31 @@ include(${CPM_DOWNLOAD_LOCATION})
 # Add CPMPackages for editor here with CPMAddPackage(NAME <PackageName> VERSION <Version> GITHUB_REPOSITORY <GitRepository> GIT_TAG <GitTag>)
 # Example: CPMAddPackage(NAME Warlock VERSION 0.0.1 GITHUB_REPOSITORY TheLartians/Warlock)
 
-# Collect all source files
-set(SOURCES
-    src/EditorApp.cpp
-)
+add_executable(FrostForge-Editor)
 
-add_executable(FrostForge-Editor src/EditorApp.cpp)
+# Add Source files based on OS
+if(CMAKE_SYSTEM_NAME STREQUAL "Windows")
+    target_sources(FrostForge-Editor
+        PUBLIC
+            src/EditorApp.cpp
+            src/EditorLayer.cpp
+            src/EditorLayer.hpp
+    )
+elseif(CMAKE_SYSTEM_NAME STREQUAL "Linux")
+    target_sources(FrostForge-Editor
+        PUBLIC
+            src/EditorApp.cpp
+            src/EditorLayer.cpp
+            src/EditorLayer.hpp
+    )
+elseif(CMAKE_SYSTEM_NAME STREQUAL "Darwin")
+    target_sources(FrostForge-Editor
+        PUBLIC
+            src/EditorApp.cpp
+            src/EditorLayer.cpp
+            src/EditorLayer.hpp
+    )
+endif()
 
 # Link libraries for editor here
 target_link_libraries(FrostForge-Editor
